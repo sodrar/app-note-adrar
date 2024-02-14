@@ -39,7 +39,7 @@ function App() {
   ]);
 
   const notesElements = myNotes.map((note,i) => {
-    return <Note note={note} key={i} />
+    return <Note setMyNotes={setMyNotes} note={note} notes={[...myNotes]} key={i} />
   });
 
   return (
