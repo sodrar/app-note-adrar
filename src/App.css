@@ -40,3 +40,34 @@
 .read-the-docs {
   color: #888;
 }
+
+.app-container {
+  width: 1440px;
+  height: 1024px;
+  background-color: #EBD76F;
+  border-radius: 6px;
+  display: flex;
+  flex-direction: row;
+}
+
+.notes {
+  width: 720px;
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  flex-wrap: wrap;
+  padding: 30px;
+  overflow: scroll;
+  -ms-overflow-style: none;
+}
+
+.notes::-webkit-scrollbar {
+  display: none;
+}
+
+.img-add {
+  width: 270px;
+  height: 380px;
+  padding: 6px;
+  margin-right: 9px;
+}
