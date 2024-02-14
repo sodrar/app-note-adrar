@@ -7,6 +7,11 @@
     overflow: hidden;
 }
 
+.note:hover {
+    background-color: blanchedalmond;
+    cursor: pointer;
+}
+
 .title-like {
     display: flex;
     justify-content: space-between;
@@ -16,4 +21,10 @@
 
 .title-like span {
     font-size: 42px;
+    cursor: grab;
+}
+
+.note-content {
+    margin-bottom: 50px;
+    overflow: hidden;
 }
