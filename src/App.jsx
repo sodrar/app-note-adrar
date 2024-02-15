@@ -3,6 +3,7 @@ import './App.css'
 import { Note } from './components/Note/Note';
 import add from './assets/Notenote_template.png'
 import { Display } from './components/Display/Display';
+import { Adding } from './components/Adding/Adding';
 function App() {
 
   const [myNotes, setMyNotes] = useState([
@@ -49,14 +50,19 @@ function App() {
     return <Note setMyNotes={setMyNotes} note={note} notes={[...myNotes]} key={i} handleSelect={handleSelect} />
   });
 
+  const handleAdd = () => {
+    setCurrent(-1);
+  }
+
   return (
     <div className="app-container">
       <div className='notes'>
-        <img className='img-add' src={add} />
+        <img className='img-add' src={add} onClick={handleAdd} />
         {notesElements}
       </div>
       <div className="display">
-        <Display current={current} />
+        {current === -1 ? <Adding /> : <Display current={current} />}
+        
       </div>
     </div>
   )

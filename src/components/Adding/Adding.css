@@ -1,0 +1,28 @@
+.add-container {
+    display: flex;
+    flex-direction: column;
+    width: 95%;
+    margin-top: 29px;
+}
+
+.titre {
+    font-size: 50px;
+    border: none;
+    background-color: rgba(0, 0, 0, 0);
+    margin-bottom: 25px;
+}
+
+.contenu {
+    all: unset;
+    text-align: left;
+    font-size: 30px;
+    height: 650px;
+}
+
+.ajout {
+    font-size: 45px;
+    background-color: coral;
+    border: none;
+    height: 75px;
+    border-radius: 6px;
+}
