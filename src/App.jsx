@@ -58,7 +58,8 @@ function App() {
     setMyNotes([...myNotes, {
       ...noteObj,
       id: myNotes.length + 1,
-      liked: false
+      liked: false,
+      date: new Date()
     }])
     setCurrent(1)
   }

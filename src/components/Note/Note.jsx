@@ -4,12 +4,8 @@ import './Note.css'
 export function Note({ note, setMyNotes, notes, handleSelect }) {
 
     const handleLike = () => {
-        const filtered = notes.filter(n => note.id != n)
-        if (note.liked === true) {
-            note.liked = false
-        } else {
-            note.liked = true
-        }
+        const filtered = notes.filter(n => note.id != n.id)
+        note.liked = !note.liked
         setMyNotes([...filtered, note])
     }
 
