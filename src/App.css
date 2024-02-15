@@ -71,3 +71,12 @@
   padding: 6px;
   margin-right: 9px;
 }
+
+.display {
+  flex-basis: 50%;
+  margin-right: 80px;
+}
+
+.notes {
+  flex-basis: 50%;
+}

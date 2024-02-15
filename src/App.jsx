@@ -2,6 +2,7 @@ import { useState } from 'react'
 import './App.css'
 import { Note } from './components/Note/Note';
 import add from './assets/Notenote_template.png'
+import { Display } from './components/Display/Display';
 
 function App() {
 
@@ -42,6 +43,8 @@ function App() {
     return <Note setMyNotes={setMyNotes} note={note} notes={[...myNotes]} key={i} />
   });
 
+  const [current, setCurrent] = useState(1)
+
   return (
     <div className="app-container">
       <div className='notes'>
@@ -49,7 +52,7 @@ function App() {
         {notesElements}
       </div>
       <div className="display">
-        
+        <Display current={myNotes[current]} />
       </div>
     </div>
   )

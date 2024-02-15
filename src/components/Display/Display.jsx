@@ -1,7 +1,10 @@
 import './Display.css';
 
-export function Display() {
+export function Display({ current }) {
     return (
-        <h1>Display</h1>
+        <>
+            <h1>{current.title}</h1>
+            <p>{current.content}</p>
+        </>
     )
 }
