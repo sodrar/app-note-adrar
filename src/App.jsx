@@ -54,6 +54,15 @@ function App() {
     setCurrent(-1);
   }
 
+  const addNote = (noteObj) => {
+    setMyNotes([...myNotes, {
+      ...noteObj,
+      id: myNotes.length + 1,
+      liked: false
+    }])
+    setCurrent(1)
+  }
+
   return (
     <div className="app-container">
       <div className='notes'>
@@ -61,7 +70,7 @@ function App() {
         {notesElements}
       </div>
       <div className="display">
-        {current === -1 ? <Adding /> : <Display current={current} />}
+        {current === -1 ? <Adding addNote={addNote} /> : <Display current={current} />}
         
       </div>
     </div>
