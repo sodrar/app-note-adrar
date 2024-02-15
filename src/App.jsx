@@ -3,7 +3,6 @@ import './App.css'
 import { Note } from './components/Note/Note';
 import add from './assets/Notenote_template.png'
 import { Display } from './components/Display/Display';
-
 function App() {
 
   const [myNotes, setMyNotes] = useState([
@@ -39,11 +38,16 @@ function App() {
     }
   ]);
 
-  const notesElements = myNotes.map((note,i) => {
-    return <Note setMyNotes={setMyNotes} note={note} notes={[...myNotes]} key={i} />
-  });
+  const [current, setCurrent] = useState(1);
 
-  const [current, setCurrent] = useState(1)
+  const handleSelect = (note) => {
+    setCurrent(note)
+    console.log(current)
+  }
+
+  const notesElements = myNotes.map((note,i) => {
+    return <Note setMyNotes={setMyNotes} note={note} notes={[...myNotes]} key={i} handleSelect={handleSelect} />
+  });
 
   return (
     <div className="app-container">
@@ -52,7 +56,7 @@ function App() {
         {notesElements}
       </div>
       <div className="display">
-        <Display current={myNotes[current]} />
+        <Display current={current} />
       </div>
     </div>
   )

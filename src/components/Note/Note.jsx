@@ -1,6 +1,7 @@
+import { useEffect } from 'react'
 import './Note.css'
 
-export function Note({note, setMyNotes, notes}) {
+export function Note({ note, setMyNotes, notes, handleSelect }) {
 
     const handleLike = () => {
         const filtered = notes.filter(n => note.id != n)
@@ -9,15 +10,14 @@ export function Note({note, setMyNotes, notes}) {
         } else {
             note.liked = true
         }
-        setMyNotes([...filtered], note)
-        console.log(notes)
+        setMyNotes([...filtered, note])
     }
 
     return (
-        <div className="note">
+        <div className="note" onClick={() => { handleSelect(note) }}>
             <div className="title-like">
                 <h3>{note.title}</h3>
-                <button className='liked' onClick={handleLike} >{note.liked ? "❤️" : "💔" }</button>
+                <button className='liked' onClick={handleLike} >{note.liked ? "❤️" : "💔"}</button>
             </div>
             <p className='note-content'>
                 {note.content}
