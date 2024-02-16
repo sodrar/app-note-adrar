@@ -29,7 +29,9 @@ function App() {
     setCurrent(1)
   }
 
-  const sortedNote = [...myNotes].sort((a, b) => { return a.date.getTime() - b.date.getTime() })
+  
+
+  const sortedNote = [...myNotes].sort((a, b) => { return b.date.getTime() - a.date.getTime() })
 
   const notesElements = sortedNote.map((note, i) => {
     return <Note setMyNotes={setMyNotes} note={note} notes={[...myNotes]} key={i} handleSelect={handleSelect} />

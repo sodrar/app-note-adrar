@@ -6,6 +6,7 @@ export function Note({ note, setMyNotes, notes, handleSelect }) {
     const handleLike = () => {
         const filtered = notes.filter(n => note.id != n.id)
         note.liked = !note.liked
+        note.date = new Date()
         setMyNotes([...filtered, note])
     }
 
@@ -18,6 +19,7 @@ export function Note({ note, setMyNotes, notes, handleSelect }) {
             <p className='note-content'>
                 {note.content}
             </p>
+            <strong>{note.date.getHours()}:{note.date.getMinutes()}:{note.date.getSeconds()}</strong>
         </div>
     )
 }
