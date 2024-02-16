@@ -19,7 +19,6 @@ export function Note({ note, setMyNotes, notes, handleSelect }) {
             <p className='note-content'>
                 {note.content}
             </p>
-            <strong>{note.date.getHours()}:{note.date.getMinutes()}:{note.date.getSeconds()}</strong>
         </div>
     )
 }
