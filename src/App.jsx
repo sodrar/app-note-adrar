@@ -32,8 +32,14 @@ function App() {
   
 
   const sortedNote = [...myNotes].sort((a, b) => { return b.date.getTime() - a.date.getTime() })
+  const liked = [...sortedNote].filter(note => note.liked)
+  const notLiked = [...sortedNote].filter(note => !note.liked)
 
-  const notesElements = sortedNote.map((note, i) => {
+  const notesElementsLiked = liked.map((note, i) => {
+    return <Note setMyNotes={setMyNotes} note={note} notes={[...myNotes]} key={i} handleSelect={handleSelect} />
+  });
+
+  const notesElementsNotLiked = notLiked.map((note, i) => {
     return <Note setMyNotes={setMyNotes} note={note} notes={[...myNotes]} key={i} handleSelect={handleSelect} />
   });
 
@@ -41,7 +47,11 @@ function App() {
     <div className="app-container">
       <div className='notes'>
         <img className='img-add' src={add} onClick={handleAdd} />
-        {notesElements}
+        {notesElementsLiked}
+        <div className='limit'>
+
+        </div>
+        {notesElementsNotLiked}
       </div>
       <div className="display">
         {current === -1 ? <Adding addNote={addNote} /> : <Display current={current} />}

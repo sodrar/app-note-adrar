@@ -80,3 +80,9 @@
 .notes {
   flex-basis: 50%;
 }
+
+.limit {
+  width: 92%;
+  height: 3px;
+  background-color: black;
+}
