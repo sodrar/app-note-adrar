@@ -4,6 +4,7 @@ import './Display.css';
 import { DisplayModif } from '../DisplayModif/DisplayModif';
 
 export function Display({ current }) {
+    console.log(current)
 
     const [onModif, setOnModif] = useState(false)
     const handleModif = () => {
@@ -12,7 +13,7 @@ export function Display({ current }) {
 
     return (
         <>
-            {onModif ? <DisplayModif /> : <DisplayNote handleModif={handleModif} current={current} />}
+            {onModif && Object.keys(current).length > 0 ? <DisplayModif /> : <DisplayNote handleModif={handleModif} current={current} />}
         </>
     )
 }

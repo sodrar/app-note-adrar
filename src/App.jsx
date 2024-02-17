@@ -8,7 +8,7 @@ function App() {
 
   const [myNotes, setMyNotes] = useState([]);
 
-  const [current, setCurrent] = useState(1);
+  const [current, setCurrent] = useState(-1);
 
   const handleSelect = (note) => {
     setCurrent(note)
@@ -25,7 +25,7 @@ function App() {
       liked: false,
       date: new Date()
     }])
-    setCurrent(1)
+    setCurrent(-1)
   }
 
   
