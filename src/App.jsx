@@ -12,7 +12,6 @@ function App() {
 
   const handleSelect = (note) => {
     setCurrent(note)
-    console.log(current)
   }
 
   const handleAdd = () => {
