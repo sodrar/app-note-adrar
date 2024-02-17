@@ -1,0 +1,15 @@
+.modif {
+    display: flex;
+    flex-direction: column;
+    margin-top: 100px;
+    gap: 50px;
+    justify-content: center;
+}
+
+.btn-modif {
+    background-color: black;
+    color: white;
+    width: 50%;
+    border-radius: 6px;
+    align-self: center;
+}

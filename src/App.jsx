@@ -28,7 +28,16 @@ function App() {
     setCurrent(-1)
   }
 
-  
+  const modifyNote = (data,id) => {
+    const tempFilter = myNotes.filter(note => note.id != id)
+    setMyNotes([...tempFilter, {
+      ...data,
+      id: id,
+      date: new Date()
+    }])
+
+    setCurrent(-1)
+  }
 
   const sortedNote = [...myNotes].sort((a, b) => { return b.date.getTime() - a.date.getTime() })
   const liked = [...sortedNote].filter(note => note.liked)
@@ -53,7 +62,7 @@ function App() {
         {notesElementsNotLiked}
       </div>
       <div className="display">
-        {current === -1 ? <Adding addNote={addNote} /> : <Display current={current} />}
+        {current === -1 ? <Adding addNote={addNote} /> : <Display modifyNote={modifyNote} current={current} />}
 
       </div>
     </div>
