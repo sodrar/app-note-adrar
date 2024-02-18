@@ -13,3 +13,7 @@
     border-radius: 6px;
     align-self: center;
 }
+
+input,textarea,button {
+    font-size: x-large;
+}

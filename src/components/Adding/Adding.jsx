@@ -3,12 +3,12 @@ import './Adding.css'
 
 export function Adding({addNote}) {
 
-    const [titre,setTitre] = useState("Titre")
+    const [titre,setTitre] = useState("")
     const handleTitreInput = e => {
         setTitre(e.target.value)
     }
 
-    const [contenu,setContenu] = useState("Rentrez votre note ici")
+    const [contenu,setContenu] = useState("")
     const handleContenuInput = e => {
         setContenu(e.target.value)
     }
@@ -22,8 +22,8 @@ export function Adding({addNote}) {
 
     return (
         <div className="add-container">
-            <input className="titre" type="text" value={titre} onInput={handleTitreInput}/>
-            <textarea className="contenu" type="text" value={contenu} onInput={handleContenuInput}></textarea>
+            <input className="titre" type="text" value={titre} onInput={handleTitreInput} placeholder="Titre"/>
+            <textarea className="contenu" type="text" value={contenu} placeholder="Rentrez votre note ici" onInput={handleContenuInput}></textarea>
             <button className="ajout" onClick={handleSubmit} >Ajouter</button>
         </div>
     )
