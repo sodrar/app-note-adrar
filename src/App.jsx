@@ -25,6 +25,7 @@ function App() {
       liked: false,
       date: new Date()
     }])
+    console.log(myNotes)
     setCurrent(-1)
   }
 
@@ -69,7 +70,6 @@ function App() {
       </div>
       <div className="display">
         {current === -1 ? <Adding addNote={addNote} /> : <Display modifyNote={modifyNote} handleDelete={handleDelete} current={current} />}
-
       </div>
     </div>
   )

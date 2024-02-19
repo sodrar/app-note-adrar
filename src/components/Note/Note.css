@@ -6,6 +6,9 @@
     padding: 10px;
     overflow: hidden;
     font-size: x-large;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .note:hover {
@@ -36,4 +39,13 @@
 
 .liked:focus {
     border: none;
+}
+
+.categorieD {
+    border: 1px black solid;
+    border-radius: 25px;
+    padding: 8px;
+    width: 50%;
+    align-self: center;
+    margin-bottom: 5px;
 }

@@ -19,6 +19,7 @@ export function Note({ note, setMyNotes, notes, handleSelect }) {
             <p className='note-content'>
                 {note.content}
             </p>
+            <strong className='categorieD'>#{note.categorie}</strong>
         </div>
     )
 }
