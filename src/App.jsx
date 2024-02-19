@@ -51,6 +51,12 @@ function App() {
     return <Note setMyNotes={setMyNotes} note={note} notes={[...myNotes]} key={i} handleSelect={handleSelect} />
   });
 
+  function handleDelete(id) {
+    const tempFilter = [...myNotes].filter(note => note.id != id)
+    setMyNotes([...tempFilter])
+    setCurrent(-1)
+  }
+
   return (
     <div className="app-container">
       <div className='notes'>
@@ -62,7 +68,7 @@ function App() {
         {notesElementsNotLiked}
       </div>
       <div className="display">
-        {current === -1 ? <Adding addNote={addNote} /> : <Display modifyNote={modifyNote} current={current} />}
+        {current === -1 ? <Adding addNote={addNote} /> : <Display modifyNote={modifyNote} handleDelete={handleDelete} current={current} />}
 
       </div>
     </div>

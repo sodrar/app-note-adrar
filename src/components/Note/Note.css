@@ -5,6 +5,7 @@
     border-radius: 6px;
     padding: 10px;
     overflow: hidden;
+    font-size: x-large;
 }
 
 .note:hover {
