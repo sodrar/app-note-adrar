@@ -86,3 +86,10 @@
   height: 3px;
   background-color: black;
 }
+
+.categorieS {
+  margin-bottom: 20px;
+  font-size: xx-large;
+  margin-left: 146px;
+  width: fit-content;
+}

@@ -20,7 +20,7 @@ export function Adding({ addNote }) {
         addNote({
             title: titre,
             content: contenu,
-            categorie: tag
+            categorie: [tag,""]
         })
     }
 
